@@ -11,8 +11,8 @@ public class VariableNamesTheme {
         System.out.println("\nСумма цифр = " + digitSum);
 
         // Произведение цифр 
-        int productDigits = 5;
-        System.out.println("\nПроизведение цифр = " + productDigits);
+        int digitProduct = 5;
+        System.out.println("\nПроизведение цифр = " + digitProduct);
 
         // Максимальное число
         int maxNumber = 100;
@@ -23,20 +23,20 @@ public class VariableNamesTheme {
         System.out.println("\nКоличество десятков = " + tenCount);
 
         // Вес собаки
-        int dogHeight = 25;
-        System.out.println("\nВес собаки = " + dogHeight);
+        int dogWeight = 25;
+        System.out.println("\nВес собаки = " + dogWeight);
 
         // Исходное число
-        int numberInitial = 5;
-        System.out.println("\nИсходное число = " + numberInitial);
+        int initialNumber = 5;
+        System.out.println("\nИсходное число = " + initialNumber);
 
         // Процент по вкладу
-        int rateDeposit = 3;
-        System.out.println("\nПроцент по вкладу = " + rateDeposit);
+        int depositRate = 3;
+        System.out.println("\nПроцент по вкладу = " + depositRate);
 
         // Переменная хранит символ &
-        String storeCharacter = "&";
-        System.out.println("\nПеременная хранит символ = " + storeCharacter);
+        String sign = "&";
+        System.out.println("\nПеременная хранит символ = " + sign);
 
         // Код ошибки
         String errorCode = "NullPointerException";
@@ -47,8 +47,8 @@ public class VariableNamesTheme {
         System.out.println("\nТип сообщения = " + messageType);
 
         // Число нулей
-        int nullCount = 00;
-        System.out.println("\nЧисло нулей = " + nullCount);
+        int zeroCount = 00;
+        System.out.println("\nЧисло нулей = " + zeroCount);
 
         // Уникальное число
         int uniqNumber = 333;
@@ -71,8 +71,8 @@ public class VariableNamesTheme {
         System.out.println("\nМаксимальная длина = " + maxLength);
 
         // Пункт меню
-        String itemMenu = "Soup";
-        System.out.println("\nПункт меню = " + itemMenu);
+        String menuItem = "Soup";
+        System.out.println("\nПункт меню = " + menuItem);
 
         // Стоимость кофе
         int coffeePrice = 150;
@@ -107,18 +107,18 @@ public class VariableNamesTheme {
         System.out.println("\nСчетчик = " + counter);
 
         // Путь до файла
-        String pathFile = "D:/utils/";
-        System.out.println("\nПуть до файла = " + pathFile);
+        String filePath = "D:/utils/";
+        System.out.println("\nПуть до файла = " + filePath);
 
         // Количество чисел в каждой строке
-        int eachLineCountNumbers = 10;
-        System.out.println("\nКоличество чисел в каждой строке = " + eachLineCountNumbers);
+        int numCountPerLine = 10;
+        System.out.println("\nКоличество чисел в каждой строке = " + numCountPerLine);
 
         System.out.println("\n\n2.Boolean-переменные");
 
         // Сотни равны?
-        boolean isHundredsEqual = true;
-        System.out.println("\n\nСотни равны? = " + isHundredsEqual);
+        boolean isEqualHundreds = true;
+        System.out.println("\n\nСотни равны? = " + isEqualHundreds);
 
         // Компьютер включен?
         boolean isComputerOn = false;
@@ -129,8 +129,8 @@ public class VariableNamesTheme {
         System.out.println("\nЕсть равные цифры? = " + hasEqualNumbers);
 
         // Создано?
-        boolean isCreate = false;
-        System.out.println("\nСоздано? = " + isCreate);
+        boolean isCreated = false;
+        System.out.println("\nСоздано? = " + isCreated);
 
         // Пустое?
         boolean isEmpty = true;
@@ -145,8 +145,8 @@ public class VariableNamesTheme {
         System.out.println("\nНовое? = " + isNew);
 
         // Электронная почта действительная?
-        boolean isEmailValid = true;
-        System.out.println("\nЭлектронная почта действительная? = " + isEmailValid);
+        boolean isValidEmail = true;
+        System.out.println("\nЭлектронная почта действительная? = " + isValidEmail);
 
         // Имеются уникальные строки?
         boolean hasUniqStrings = true;
@@ -155,8 +155,8 @@ public class VariableNamesTheme {
         System.out.println("\n\n3.Аббревиатуры ");
 
         // Cтарый universally unique identifier
-        String uuid = "61f0c404-5cb3-11e7-907b-a6006ad3dba0";
-        System.out.println("\n\nCтарый universally unique identifier = " + uuid);
+        String oldUuid = "61f0c404-5cb3-11e7-907b-a6006ad3dba0";
+        System.out.println("\n\nCтарый universally unique identifier = " + oldUuid);
 
         // Производитель оперативной памяти
         String ramVendor = "Asus";
