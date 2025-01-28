@@ -5,22 +5,21 @@ public class IfElseStatementTheme {
     public static void main(String[] args) {
         System.out.println("\n1.Перевод псевдокода на язык Java");
 
-        boolean gender = true;
-        int age = 15;
-        double height = 2.0;
-
-        if (!gender) {
+        boolean isGender = true;
+        if (!isGender) {
             System.out.println("\nЖенщина");
         } else {
             System.out.println("\nМужчина");
         }
 
+        int age = 15;
         if (age > 18) {
             System.out.println("Совершеннолетний");
         } else {
             System.out.println("Несовершеннолетний");
         }
-
+        
+        double height = 2.0;
         if (height < 1.8) {
             System.out.println("Будущий баскетболист");
         } else {
@@ -54,57 +53,57 @@ public class IfElseStatementTheme {
         int randomNumber = 7;
         if (randomNumber == 0) {
             System.out.println("\nЧисло равно 0");
-        } else if ((randomNumber % 2 == 0) && (randomNumber > 0)) {
-            System.out.println(randomNumber + " является положительным и четным");
-        } else if ((randomNumber % 2 == 0) && (randomNumber < 0)) {
-            System.out.println(randomNumber + " является отрицательным и четным ");
-        } else if ((randomNumber % 2 == 1) && (randomNumber > 0)) {
-            System.out.println(randomNumber + " является положительным и нечетным ");
         } else {
-            System.out.println(randomNumber + " является отрицательным и нечетным ");
+            String sign;
+            if (randomNumber < 0) {
+                sign = "отрицательным";
+            } else {
+                sign = "положительным";
+            }
+
+            String parity;
+            if (randomNumber % 2 == 0) {
+                parity = "четным";
+            } else {
+                parity = "нечетным";
+            }
+
+            System.out.println(randomNumber + " является " + sign + " и " + parity + ".");
         }
 
         System.out.println("\n4.Поиск одинаковых цифр в числах");
 
-        int firstReferenceValue = 123;
-        int secondReferenceValue = 223;
-        int firstReferenceValueHundreds = (firstReferenceValue / 100);
-        int firstReferenceValueTens = (firstReferenceValue / 10) % 10;
-        int firstReferenceValueUnits = (firstReferenceValue % 10);
-        int secondReferenceValueHundreds = (secondReferenceValue / 100);
-        int secondReferenceValueTens = (secondReferenceValue / 10) % 10;
-        int secondReferenceValueUnits = (secondReferenceValue % 10);
+        int originalValue1 = 123;
+        int originalValue2 = 223;
+        int originalValue1Hundreds = (originalValue1 / 100);
+        int originalValue1Tens = (originalValue1 / 10) % 10;
+        int originalValue1Units = (originalValue1 % 10);
+        int originalValue2Hundreds = (originalValue2 / 100);
+        int originalValue2Tens = (originalValue2 / 10) % 10;
+        int originalValue2Units = (originalValue2 % 10);
         boolean hasMathes = false;
 
-        if (firstReferenceValueHundreds == secondReferenceValueHundreds) {
-            hasMathes = true;
-        }
-        if (firstReferenceValueTens == secondReferenceValueTens) {
-            hasMathes = true;
-        }
-        if (firstReferenceValueUnits == secondReferenceValueUnits) {
-            hasMathes = true;
-        }
+        if (originalValue1Hundreds == originalValue2Hundreds &&
+                originalValue1Tens == originalValue2Tens && 
+                originalValue1Units == originalValue2Units) {
+            System.out.println("Все цифры в одинаковых разрядах равны.");
+        } else {
+            System.out.println("\nИсходные числа:");
+            System.out.println("Первое число: " + originalValue1);
+            System.out.println("Второе число: " + originalValue2);
+            System.out.println("\nСовпадающие цифры:");
 
-        if (!hasMathes) {
-            System.out.println("Совпадения отсутствуют");
-        }
-
-        System.out.println("\nИсходные числа:");
-        System.out.println("Первое число: " + firstReferenceValue);
-        System.out.println("Второе число: " + secondReferenceValue);
-        System.out.println("\nСовпадающие цифры:");
-
-        if (firstReferenceValueHundreds == secondReferenceValueHundreds) {
-            System.out.println("- Сотни: " + firstReferenceValueHundreds);
-        }
-        
-        if (firstReferenceValueTens == secondReferenceValueTens) {
-            System.out.println("- Десятки: " + firstReferenceValueTens);
-        }
-        
-        if (firstReferenceValueUnits == secondReferenceValueUnits) {
-            System.out.println("- Единицы: " + firstReferenceValueUnits);
+            if (originalValue1Hundreds == originalValue2Hundreds) {
+                System.out.println("- Сотни: " + originalValue1Hundreds);
+            }
+            
+            if (originalValue1Tens == originalValue2Tens) {
+                System.out.println("- Десятки: " + originalValue1Tens);
+            }
+            
+            if (originalValue1Units == originalValue2Units) {
+                System.out.println("- Единицы: " + originalValue1Units);
+            }
         }
 
         System.out.println("\n5.Определение символа по его коду");
@@ -124,23 +123,26 @@ public class IfElseStatementTheme {
         System.out.println("\n6.Подсчет начисленных банком %");
 
         double bankDeposit = 321123.59;
-        int percentLessThanHundredThousand = 5;
-        int percentInRangeHundredThousandAndThreeHundredThousand = 7;
-        int percentOverThreeHundredThousand = 10;
+        int percentRate1 = 5;
+        int percentRate2 = 7;
+        int percentRate3 = 10;
+        int selectPercent = 0;
         double allPercentInDeposit = 0;
 
         if (bankDeposit < 100000) {
-            allPercentInDeposit = bankDeposit / 100 * percentLessThanHundredThousand;
+            selectPercent += percentRate1;
+            allPercentInDeposit = bankDeposit / 100 * selectPercent;
         } else if ((bankDeposit >= 100000) && (bankDeposit <= 300000)) {
-            allPercentInDeposit = bankDeposit / 100 * percentInRangeHundredThousandAndThreeHundredThousand;
+            selectPercent += percentRate2;
+            allPercentInDeposit = bankDeposit / 100 * percentRate2;
         } else {
-            allPercentInDeposit = bankDeposit / 100 * percentOverThreeHundredThousand;
+            selectPercent += percentRate3;
+            allPercentInDeposit = bankDeposit / 100 * percentRate3;
         }
 
-        double totalDepositAmount = bankDeposit + allPercentInDeposit;
         System.out.println("\nСумма вклада " + bankDeposit);
         System.out.println("Сумма начисленного % " + allPercentInDeposit);
-        System.out.println("Итоговая сумма с % " + totalDepositAmount);
+        System.out.println("Итоговая сумма с % " + (bankDeposit + allPercentInDeposit));
 
         System.out.println("\n7.Определение оценки по предметам");
 
@@ -213,19 +215,19 @@ public class IfElseStatementTheme {
         System.out.println("\n10.*Подсчет начисленных банком %");
 
         BigDecimal bankDepositSecond = new BigDecimal(321123.59).setScale(2, RoundingMode.HALF_UP);
-        BigDecimal percentLessThanHundredThousandSecond = new BigDecimal(5);
-        BigDecimal percentInRangeHundredThousandAndThreeHundredThousandSecond = new BigDecimal(7);
+        BigDecimal percentRate1Second = new BigDecimal(5);
+        BigDecimal percentRate2Second = new BigDecimal(7);
         BigDecimal percentOverThreeHundredThousandSecond = new BigDecimal(10);
         BigDecimal allPercentInDepositSecond = new BigDecimal(0);
 
         if (bankDepositSecond.intValue() < 100000) {
             allPercentInDepositSecond = bankDepositSecond
             .divide(new BigDecimal(100), 2, RoundingMode.HALF_UP)
-            .multiply(percentLessThanHundredThousandSecond);
+            .multiply(percentRate1Second);
         } else if ((bankDepositSecond.intValue() >= 100000) && (bankDepositSecond.intValue() <= 300000)) {
             allPercentInDepositSecond = bankDepositSecond
             .divide(new BigDecimal(100), 2, RoundingMode.HALF_UP)
-            .multiply(percentInRangeHundredThousandAndThreeHundredThousandSecond);
+            .multiply(percentRate2Second);
         } else {
             allPercentInDepositSecond = bankDepositSecond
             .divide(new BigDecimal(100), 2, RoundingMode.HALF_UP)
@@ -239,11 +241,3 @@ public class IfElseStatementTheme {
         System.out.println("Итоговая сумма с % " + totalDepositAmountSecond);
     }
 }
-
-
-
-
-
-
-
-
