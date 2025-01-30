@@ -65,12 +65,12 @@ public class VariablesTheme {
         System.out.println("Long increment " + ++maxLongValue);
         System.out.println("Long decrement " + --maxLongValue);
 
-        char maxCharValue = '\uffff';
-        System.out.println("\nChar " + maxCharValue);
+        char maxCharValue = 65535;
+        System.out.println("\nChar " + (int) maxCharValue);
         maxCharValue++;
-        System.out.println("Char increment " + maxCharValue);
+        System.out.println("Char increment " + (int) maxCharValue);
         maxCharValue--;
-        System.out.println("Char decrement " + maxCharValue);
+        System.out.println("Char decrement " + (int) maxCharValue);
 
         System.out.println("\n5.Перестановка значений переменных");
 
