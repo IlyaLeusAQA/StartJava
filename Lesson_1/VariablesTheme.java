@@ -27,12 +27,12 @@ public class VariablesTheme {
 
         double penPrice = 105.5;
         double bookPrice = 235.83;
-        int sale = 11;
-        double sumGoods = penPrice + bookPrice;
-        double discountAmount = sumGoods / 100 * sale;
-        double discountPrice = sumGoods - discountAmount;
+        int discount = 11;
+        double basePrice = penPrice + bookPrice;
+        double discountAmount = basePrice / 100 * discount;
+        double discountPrice = basePrice - discountAmount;
 
-        System.out.println("\nCтоимость товаров без скидки " + sumGoods);
+        System.out.println("\nCтоимость товаров без скидки " + basePrice);
         System.out.println("Сумма скидки " + discountAmount);
         System.out.println("Стоимость товаров со скидкой " + discountPrice);
 
@@ -45,61 +45,62 @@ public class VariablesTheme {
 
         System.out.println("\n4.Вывод min и max значений целых числовых типов");
 
-        byte valueOne = 127;
-        short valueTwo = 32767;
-        int valueThree = 2147483647;
-        long valueFour = 9223372036854775807L; 
-        char valueFive = 65535; 
+        byte maxByteValue = 127;
+        System.out.println("\nByte " + maxByteValue);
+        System.out.println("Byte increment " + ++maxByteValue);
+        System.out.println("Byte decrement " + --maxByteValue);
 
-        System.out.println("\nByte " + valueOne);
-        System.out.println("Byte increment " + ++valueOne);
-        System.out.println("Byte decrement " + --valueOne);
+        short maxShortValue = 32767;
+        System.out.println("\nShort " + maxShortValue);
+        System.out.println("Short increment " + ++maxShortValue);
+        System.out.println("Short decrement " + --maxShortValue);
 
-        System.out.println("\nShort " + valueTwo);
-        System.out.println("Short increment " + ++valueTwo);
-        System.out.println("Short decrement " + --valueTwo);
-
-        System.out.println("\nInt " + valueThree);
-        System.out.println("Int increment " + ++valueThree);
-        System.out.println("Int decrement " + --valueThree);
+        int maxIntValue = 2147483647;
+        System.out.println("\nInt " + maxIntValue);
+        System.out.println("Int increment " + ++maxIntValue);
+        System.out.println("Int decrement " + --maxIntValue);
         
-        System.out.println("\nLong " + valueFour);
-        System.out.println("Long increment " + ++valueFour);
-        System.out.println("Long decrement " + --valueFour);
+        long maxLongValue = 9223372036854775807L;
+        System.out.println("\nLong " + maxLongValue);
+        System.out.println("Long increment " + ++maxLongValue);
+        System.out.println("Long decrement " + --maxLongValue);
 
-        System.out.println("\nChar " + valueFive);
-        System.out.println("Char increment " + ++valueFive);
-        System.out.println("Char decrement " + --valueFive);
+        char maxCharValue = '\uffff';
+        System.out.println("\nChar " + maxCharValue);
+        maxCharValue++;
+        System.out.println("Char increment " + maxCharValue);
+        maxCharValue--;
+        System.out.println("Char decrement " + maxCharValue);
 
         System.out.println("\n5.Перестановка значений переменных");
 
-        int originNum = 2;
-        int originNumTwo = 5;
+        int originNum1 = 2;
+        int originNum2 = 5;
 
         System.out.println("\nСпособ 1: С помощью третьей переменной");
-        System.out.println("Исходные значения: a = " + originNum + ", b = " + originNumTwo);
+        System.out.println("Исходные значения: a = " + originNum1 + ", b = " + originNum2);
 
-        int temp = originNum;
-        originNum = originNumTwo;
-        originNumTwo = temp;
+        int temp = originNum1;
+        originNum1 = originNum2;
+        originNum2 = temp;
 
-        System.out.println("Новые значения: a = " + originNum + ", b = " + originNumTwo);
+        System.out.println("Новые значения: a = " + originNum1 + ", b = " + originNum2);
         System.out.println("\nСпособ 2: С помощью арифметических операций");
-        System.out.println("Исходные значения: a = " + originNum + ", b = " + originNumTwo);
+        System.out.println("Исходные значения: a = " + originNum1 + ", b = " + originNum2);
 
-        originNum = originNum + originNumTwo;
-        originNumTwo = originNum - originNumTwo;
-        originNum = originNum - originNumTwo;
+        originNum1 = originNum1 + originNum2;
+        originNum2 = originNum1 - originNum2;
+        originNum1 = originNum1 - originNum2;
 
-        System.out.println("Новые значения: a = " + originNum + ", b = " + originNumTwo);
+        System.out.println("Новые значения: a = " + originNum1 + ", b = " + originNum2);
         System.out.println("\nСпособ 3: С помощью побитовой операции ^");
-        System.out.println("Исходные значения: a = " + originNum + ", b = " + originNumTwo);
+        System.out.println("Исходные значения: a = " + originNum1 + ", b = " + originNum2);
 
-        originNum = originNum ^ originNumTwo;
-        originNumTwo = originNum ^ originNumTwo;
-        originNum = originNum ^ originNumTwo;
+        originNum1 = originNum1 ^ originNum2;
+        originNum2 = originNum1 ^ originNum2;
+        originNum1 = originNum1 ^ originNum2;
 
-        System.out.println("Новые значения: a = " + originNum + ", b = " + originNumTwo);
+        System.out.println("Новые значения: a = " + originNum1 + ", b = " + originNum2);
 
         System.out.println("\n6.Вывод символов и их кодов");
 
@@ -126,59 +127,59 @@ public class VariablesTheme {
         
         System.out.println("\n7.Вывод в консоль ASCII-арт Дюка");
 
-        String a = "/";
-        String b = "\\";
-        String c = "_";
-        String d = "(";
-        String e = ")";
+        String slash = "/";
+        String backSlash = "\\";
+        String quote = "_";
+        String open = "(";
+        String close = ")";
 
-        System.out.println("\n    " + a + b + "  ");
-        System.out.println("   " + a + "  " + b + "");
-        System.out.println("  " + a + c + d + " " + e + b + "");
-        System.out.println(" " + a + "      " + b + "  ");
-        System.out.println("" + a + c + c + c + c + a + b + c + c + b);
+        System.out.println("\n    " + slash + backSlash);
+        System.out.println("   " + slash + "  " + backSlash);
+        System.out.println("  " + slash + quote + open + " " + close + backSlash);
+        System.out.println(" " + slash + "      " + backSlash);
+        System.out.println("" + slash + quote + quote + quote + quote +
+                         slash + backSlash + quote + quote + backSlash);
 
         System.out.println("\n8.Манипуляции с сотнями, десятками и единицами числа");
 
-        int someNumber = 123;
-        int hundreds = someNumber / 100;
-        int tens = (someNumber / 10) % 10;
-        int units = someNumber % 10;
-        int totalDigits = hundreds + tens + units;
-        int multiplyDigits = hundreds * tens * units;
+        int someNum = 123;
+        int hundreds = someNum / 100;
+        int tens = (someNum / 10) % 10;
+        int ones = someNum % 10;
+        int digitsSum = hundreds + tens + ones;
+        int digitsMultiply = hundreds * tens * ones;
 
-        System.out.println("\nЧисло " + someNumber + " содержит:");
+        System.out.println("\nЧисло " + someNum + " содержит:");
         System.out.println("  сотен - " + hundreds);
         System.out.println("  десятков - " + tens);
-        System.out.println("  единиц - " + tens);
-        System.out.println("Сумма разрядов = " + totalDigits);
-        System.out.println("Произведение разрядов = " + multiplyDigits);
+        System.out.println("  единиц - " + ones);
+        System.out.println("Сумма разрядов = " + digitsSum);
+        System.out.println("Произведение разрядов = " + digitsMultiply);
 
         System.out.println("\n9.Перевод секунд в часы, минуты и секунды");
 
         int allSeconds = 86399;
-        int hours = allSeconds / 3600;
-        int secondsLeft = allSeconds % 3600;
-        int minutes = secondsLeft / 60;
-        int seconds = secondsLeft % 60;
+        int hh = allSeconds / 3600;
+        int mm = ((allSeconds - (hh * 3600)) / 60);
+        int ss = allSeconds % 60;
 
-        System.out.println("\n" + hours + ":" + minutes + ":" + seconds);
+        System.out.println("\n" + hh + ":" + mm + ":" + ss);
 
         System.out.println("\n10.*Расчет стоимости товара со скидкой");
 
-        BigDecimal takePenPrice = new BigDecimal(105.5);
-        BigDecimal takeBookPrice = new BigDecimal(235.83);
-        BigDecimal takeSale = new BigDecimal(11);
-        BigDecimal takeSumGoods = takePenPrice.add(takeBookPrice)
+        BigDecimal penPriceBd = new BigDecimal(105.5);
+        BigDecimal bookPriceBd = new BigDecimal(235.83);
+        BigDecimal discountBd = BigDecimal.valueOf(11);
+        BigDecimal basePriceBd = penPriceBd.add(bookPriceBd)
                 .setScale(2, RoundingMode.HALF_UP);
-        BigDecimal takeDiscountAmount = takeSumGoods.divide(new BigDecimal(100))
-                .multiply(takeSale).setScale(2, RoundingMode.HALF_UP);
-        BigDecimal takeDiscountPrice = takeSumGoods.subtract(takeDiscountAmount)
+        BigDecimal discountAmountBd = basePriceBd.divide(BigDecimal.valueOf(100))
+                .multiply(discountBd).setScale(2, RoundingMode.HALF_UP);
+        BigDecimal discountPriceBd = basePriceBd.subtract(discountAmountBd)
                 .setScale(2, RoundingMode.HALF_UP);
 
-        System.out.println("\nCтоимость товаров без скидки " + takeSumGoods);
-        System.out.println("Сумма скидки " + takeDiscountAmount);
-        System.out.println("Стоимость товаров со скидкой " + takeDiscountPrice);
+        System.out.println("\nCтоимость товаров без скидки " + basePriceBd);
+        System.out.println("Сумма скидки " + discountAmountBd);
+        System.out.println("Стоимость товаров со скидкой " + discountPriceBd);
     }
 }
 
