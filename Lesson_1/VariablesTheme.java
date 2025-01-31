@@ -88,9 +88,9 @@ public class VariablesTheme {
         System.out.println("\nСпособ 2: С помощью арифметических операций");
         System.out.println("Исходные значения: a = " + originNum1 + ", b = " + originNum2);
 
-        originNum1 = originNum1 + originNum2;
+        originNum1 += originNum2;
         originNum2 = originNum1 - originNum2;
-        originNum1 = originNum1 - originNum2;
+        originNum1 -= originNum2;
 
         System.out.println("Новые значения: a = " + originNum1 + ", b = " + originNum2);
         System.out.println("\nСпособ 3: С помощью побитовой операции ^");
@@ -128,17 +128,18 @@ public class VariablesTheme {
         System.out.println("\n7.Вывод в консоль ASCII-арт Дюка");
 
         String slash = "/";
-        String backSlash = "\\";
-        String quote = "_";
-        String open = "(";
-        String close = ")";
+        String backslash = "\\";
+        String underscore = "_";
+        String leftParenthesis = "(";
+        String rightParenthesis = ")";
 
-        System.out.println("\n    " + slash + backSlash);
-        System.out.println("   " + slash + "  " + backSlash);
-        System.out.println("  " + slash + quote + open + " " + close + backSlash);
-        System.out.println(" " + slash + "      " + backSlash);
-        System.out.println("" + slash + quote + quote + quote + quote +
-                         slash + backSlash + quote + quote + backSlash);
+        System.out.println("\n    " + slash + backslash);
+        System.out.println("   " + slash + "  " + backslash);
+        System.out.println("  " + slash + underscore + leftParenthesis + " " + 
+                        rightParenthesis + backslash);
+        System.out.println(" " + slash + "      " + backslash);
+        System.out.println("" + slash + underscore + underscore + underscore + underscore +
+                         slash + backslash + underscore + underscore + backslash);
 
         System.out.println("\n8.Манипуляции с сотнями, десятками и единицами числа");
 
@@ -160,7 +161,7 @@ public class VariablesTheme {
 
         int allSeconds = 86399;
         int hh = allSeconds / 3600;
-        int mm = ((allSeconds - (hh * 3600)) / 60);
+        int mm = allSeconds / 60 % 60;
         int ss = allSeconds % 60;
 
         System.out.println("\n" + hh + ":" + mm + ":" + ss);
