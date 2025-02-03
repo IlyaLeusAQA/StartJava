@@ -76,7 +76,6 @@ public class IfElseStatementTheme {
         int originalValue2Hundreds = (originalValue2 / 100);
         int originalValue2Tens = (originalValue2 / 10) % 10;
         int originalValue2Units = (originalValue2 % 10);
-        boolean hasMathes = false;
 
         if (originalValue1Hundreds == originalValue2Hundreds &&
                 originalValue1Tens == originalValue2Tens && 
@@ -118,18 +117,15 @@ public class IfElseStatementTheme {
         System.out.println("\n6.Подсчет начисленных банком %");
 
         double bankDeposit = 321123.59;
-        int percentRate1 = 5;
-        int percentRate2 = 7;
-        int percentRate3 = 10;
-        int selectPercent = 0;
+        int annualPercentRate1 = 5;
+        int annualPercentRate2 = 7;
+        int selectPercent = 10;
         
         if (bankDeposit < 100000) {
-            selectPercent += percentRate1;
+            selectPercent = annualPercentRate1;
         } else if ((bankDeposit >= 100000) && (bankDeposit <= 300000)) {
-            selectPercent += percentRate2;
-        } else {
-            selectPercent += percentRate3;
-        }
+            selectPercent = annualPercentRate2;
+        } 
 
         double allPercentInDeposit = bankDeposit / 100 * selectPercent;
         System.out.println("\nСумма вклада " + bankDeposit);
@@ -172,12 +168,11 @@ public class IfElseStatementTheme {
         double monthlySales = 13025.233;
         double monthlyRentRoom = 5123.018;
         double monthlyProductionCost = 9001.729;
-        double totalProfitInYear = ((monthlySales * 12) - 
-                (monthlyRentRoom + monthlyProductionCost) * 12);
+        double totalProfitInYear = (monthlySales - (monthlyRentRoom + monthlyProductionCost)) * 12;
 
         if (totalProfitInYear > 0) {
             System.out.println("\nПрибыль за год равна: +" + totalProfitInYear + " руб.");
-        } else if (totalProfitInYear <= 0) {
+        } else {
             System.out.println("\nПрибыль за год равна: " + totalProfitInYear + " руб.");
         } 
 
@@ -186,15 +181,14 @@ public class IfElseStatementTheme {
         BigDecimal monthlySalesSecond = new BigDecimal("13025.233");
         BigDecimal monthlyRentRoomSecond = new BigDecimal("5123.018");
         BigDecimal monthlyProductionCostSecond = new BigDecimal("9001.729");
-        BigDecimal totalProfitInYearSecond = ((monthlySalesSecond.multiply(BigDecimal.valueOf(12)))
-                .subtract((monthlyRentRoomSecond
+        BigDecimal totalProfitInYearSecond = monthlySalesSecond.subtract(monthlyRentRoomSecond
                 .add(monthlyProductionCostSecond))
-                .multiply(BigDecimal.valueOf(12))));
+                .multiply(BigDecimal.valueOf(12));
         
         if (totalProfitInYearSecond.compareTo(BigDecimal.ZERO) > 0) {
             System.out.println("\nПрибыль за год равна: +" + 
                     totalProfitInYearSecond.setScale(2, RoundingMode.HALF_UP) + " руб.");
-        } else if (totalProfitInYearSecond.compareTo(BigDecimal.ZERO) <= 0) {
+        } else {
             System.out.println("\nПрибыль за год равна: " +
                     totalProfitInYearSecond.setScale(2, RoundingMode.HALF_UP) + " руб.");
         } 
@@ -202,29 +196,23 @@ public class IfElseStatementTheme {
         System.out.println("\n10.*Подсчет начисленных банком %");
 
         BigDecimal bankDepositSecond = new BigDecimal(321123.59).setScale(2, RoundingMode.HALF_UP);
-        BigDecimal percentRate1Second = BigDecimal.valueOf(5);
-        BigDecimal percentRate2Second = BigDecimal.valueOf(7);
-        BigDecimal percentOverThreeHundredThousandSecond = BigDecimal.valueOf(10);
-        BigDecimal allPercentInDepositSecond = new BigDecimal(0);
+        BigDecimal annualPercentRate1Second = BigDecimal.valueOf(5);
+        BigDecimal annualPercentRate2Second = BigDecimal.valueOf(7);
+        BigDecimal selectPercentSecond = BigDecimal.valueOf(10);
 
         if (bankDepositSecond.intValue() < 100000) {
-            allPercentInDepositSecond = bankDepositSecond
-            .divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP)
-            .multiply(percentRate1Second);
+            selectPercentSecond = annualPercentRate1Second;
         } else if ((bankDepositSecond.intValue() >= 100000) && (bankDepositSecond.intValue() <= 300000)) {
-            allPercentInDepositSecond = bankDepositSecond
-            .divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP)
-            .multiply(percentRate2Second);
-        } else {
-            allPercentInDepositSecond = bankDepositSecond
-            .divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP)
-            .multiply(percentOverThreeHundredThousandSecond);
-        }
+            selectPercentSecond = annualPercentRate2Second;
+        } 
 
-        BigDecimal totalDepositAmountSecond = bankDepositSecond
-                .add(allPercentInDepositSecond).setScale(2, RoundingMode.HALF_UP);
+        BigDecimal totalDepositAmountSecond = bankDepositSecond.divide(BigDecimal.valueOf(100)
+                .multiply(selectPercentSecond));
         System.out.println("\nСумма вклада " + bankDepositSecond);
-        System.out.println("Сумма начисленного % " + allPercentInDepositSecond);
-        System.out.println("Итоговая сумма с % " + totalDepositAmountSecond);
+        System.out.println("Сумма начисленного % " + selectPercentSecond);
+        System.out.println("Итоговая сумма с % " + totalDepositAmountSecond
+                .setScale(2, RoundingMode.HALF_UP));
     }
 }
+
+    
