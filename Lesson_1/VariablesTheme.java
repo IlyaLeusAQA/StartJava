@@ -96,9 +96,9 @@ public class VariablesTheme {
         System.out.println("\nСпособ 3: С помощью побитовой операции ^");
         System.out.println("Исходные значения: a = " + originNum1 + ", b = " + originNum2);
 
-        originNum1 = originNum1 ^ originNum2;
-        originNum2 = originNum1 ^ originNum2;
-        originNum1 = originNum1 ^ originNum2;
+        originNum1 ^= originNum2;
+        originNum2 ^= originNum1;
+        originNum1 ^= originNum2;
 
         System.out.println("Новые значения: a = " + originNum1 + ", b = " + originNum2);
 
@@ -136,10 +136,10 @@ public class VariablesTheme {
         System.out.println("\n    " + slash + backslash);
         System.out.println("   " + slash + "  " + backslash);
         System.out.println("  " + slash + underscore + leftParenthesis + " " + 
-                        rightParenthesis + backslash);
+                rightParenthesis + backslash);
         System.out.println(" " + slash + "      " + backslash);
         System.out.println("" + slash + underscore + underscore + underscore + underscore +
-                         slash + backslash + underscore + underscore + backslash);
+                slash + backslash + underscore + underscore + backslash);
 
         System.out.println("\n8.Манипуляции с сотнями, десятками и единицами числа");
 
