@@ -2,23 +2,23 @@ public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("\n1.Подсчет суммы четных и нечетных чисел");
 
-        int sumEvenNumber = 0;
-        int sumOddNumber = 0;
+        int evenNumberSum = 0;
+        int oddNumberSum = 0;
         int startSegment = -10;
         int endSegment = 21;
-        int copystartSegment = startSegment;
+        int counter = startSegment;
 
         do {
             if (startSegment % 2 == 0) {
-                sumOddNumber += startSegment;
+                oddNumberSum += startSegment;
             } else {
-                sumEvenNumber += startSegment;
+                evenNumberSum += startSegment;
             }
             startSegment++;
         } while (startSegment <= endSegment);
 
-        System.out.println("\nВ отрезке [" + copystartSegment + "," + endSegment + 
-                "] сумма четных чисел = " + sumOddNumber + ", а нечетных = " + sumEvenNumber);
+        System.out.println("\nВ отрезке [" + counter + "," + endSegment + 
+                "] сумма четных чисел = " + oddNumberSum + ", а нечетных = " + evenNumberSum);
 
         System.out.println("\n2.Вывод чисел между min и max в порядке убывания");
 
