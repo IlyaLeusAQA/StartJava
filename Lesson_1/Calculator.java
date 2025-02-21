@@ -1,7 +1,7 @@
 public class Calculator {
     public static void main(String[] args) {
         int operand1 = 2;
-        int operand2 = 10;
+        int operand2 = 35;
         char operator = '^';
         int result = 0;
 

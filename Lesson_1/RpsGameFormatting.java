@@ -22,11 +22,11 @@ public class RpsGameFormatting {
         System.out.println("Ход " + name1 + ": ");
 
         for (int i = 0; i < 5; i++) {
-            System.out.print (rock + "\r");
+            System.out.print(rock + "\r");
             Thread.sleep(100);
-            System.out.print (scissors + "\r");
+            System.out.print(scissors + "\r");
             Thread.sleep(100);
-            System.out.print (paper + "\r");
+            System.out.print(paper + "\r");
             Thread.sleep(100);
         }
 
@@ -35,7 +35,7 @@ public class RpsGameFormatting {
         // Ход второго игрока
         String name2 = "WALLE";
         Random g = new Random();
-        int position2 = g.nextInt(1,100);
+        int position2 = g.nextInt(1, 100);
         String sign2 = rock;
 
         if (position2 > 66) {
@@ -51,11 +51,11 @@ public class RpsGameFormatting {
             Thread.sleep(100);
             System.out.print(scissors + "\r");
             Thread.sleep(100);
-            System.out.print (paper + "\r");
+            System.out.print(paper + "\r");
             Thread.sleep(100);
         }
 
-        System.out.println (sign2);
+        System.out.println(sign2);
 
         if (sign1.equals(sign2)) {
             System.out.println("Победила дружба!");
